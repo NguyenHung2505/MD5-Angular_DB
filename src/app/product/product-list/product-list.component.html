@@ -1,3 +1,5 @@
+<!--<app-navbar></app-navbar>-->
+<app-navbar></app-navbar>
 <p>Danh sach product</p>
 <router-outlet></router-outlet>
 <a routerLink="create">Create product</a>
@@ -7,6 +9,7 @@
     <td>Name </td>
     <td>Price</td>
     <td>Category</td>
+    <td colspan="2">Action</td>
   </tr>
   <tr *ngFor="let pro of listProduct ; index as i" >
     <td>{{i+1}}</td>

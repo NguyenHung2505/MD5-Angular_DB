@@ -3,6 +3,7 @@ import {ProductService} from '../../service/product.service';
 import {HttpClient} from '@angular/common/http';
 import {Category} from '../../model/Category';
 import {CategoryService} from '../../service/category.service';
+import {FormGroup} from '@angular/forms';
 
 
 @Component({

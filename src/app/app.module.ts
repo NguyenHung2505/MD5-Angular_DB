@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductDeleteComponent } from './product/product-delete/product-delete.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CategoryListComponent } from './category/category-list/category-list.component';
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
 import {ProductCreateComponent} from './product/product-create/product-create.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {ProductCreateComponent} from './product/product-create/product-create.co
     ProductEditComponent,
     ProductDeleteComponent,
     CategoryListComponent,
-    CategoryCreateComponent
+    CategoryCreateComponent,
+    NavbarComponent,
+
   ],
     imports: [
         BrowserModule,
