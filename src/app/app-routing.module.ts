@@ -5,15 +5,17 @@ import {ProductCreateComponent} from './product/product-create/product-create.co
 
 import {ProductDeleteComponent} from './product/product-delete/product-delete.component';
 import {ProductEditComponent} from './product/product-edit/product-edit.component';
+import {CategoryListComponent} from './category/category-list/category-list.component';
+import {CategoryCreateComponent} from './category/category-create/category-create.component';
 
 
 const routes: Routes = [
   {
-    path: 'trangchuproduct',
+    path: '',
     component: ProductListComponent,
     children: [
       {
-        path: 'create',
+        path: 'createProduct',
         component: ProductCreateComponent
       },
       {
@@ -23,7 +25,16 @@ const routes: Routes = [
       {
         path: 'delete/:id',
         component: ProductDeleteComponent
+      },
+      {
+        path: 'categorylist',
+        component: CategoryCreateComponent
+      },
+      {
+        path: 'createCategory',
+        component: CategoryCreateComponent
       }
+
     ]
   }
 

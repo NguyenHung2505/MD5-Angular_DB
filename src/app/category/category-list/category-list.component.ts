@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit {
-  category: Category[] = [];
+  listcategory: Category[] = [];
   constructor(private  categoryService: CategoryService,
               private router: Router,
               private activatedRoute: ActivatedRoute) { }
