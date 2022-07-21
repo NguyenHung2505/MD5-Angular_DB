@@ -28,4 +28,10 @@ export class ProductService {
   delete(id: number): Observable<Product> {
     return this.httpClient.delete<Product>(this.API + `/${id}`);
   }
+  getByProductById(id: number): Observable<Product> {
+    return this.httpClient.get<Product>(this.API + `/category/${id}`);
+  }
+  searchname(name: any): Observable<Product> {
+    return this.httpClient.get<Product>(this.API + `/searchname?name=${name}`);
+  }
 }

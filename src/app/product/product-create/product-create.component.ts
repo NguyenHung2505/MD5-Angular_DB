@@ -40,7 +40,7 @@ export class ProductCreateComponent implements OnInit {
     this.productBeService.save(this.obj).subscribe((data) => {
         alert('Them thanh cong');
         this.obj = data;
-        this.router.navigate(['product-be']);
+        // this.router.navigate(['']);
       },
     );
   }

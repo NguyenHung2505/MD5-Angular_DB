@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryService} from '../../service/category.service';
+import {FormControl, FormGroup} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {ProductService} from '../../service/product.service';
+import {Product} from '../../model/product';
+import {Category} from '../../model/Category';
 
 @Component({
   selector: 'app-category-create',
@@ -7,20 +13,24 @@ import {CategoryService} from '../../service/category.service';
   styleUrls: ['./category-create.component.css']
 })
 export class CategoryCreateComponent implements OnInit {
-  // // @ts-ignore
-  // formCate : new FormGroup = new FormGroup({
-  //   name: new FormControl()
-  // })
-  constructor(private categoryService: CategoryService) { }
-
+  formcategory = new FormGroup({
+    name: new FormControl('')
+  });
+  obj: any;
+  constructor(private httpCline: HttpClient, private router: Router,
+              private categoryService: CategoryService) {
+  }
   ngOnInit(): void {
   }
-  // add(){
-  //   const category = this.formCate.value;
-  //   this.categoryService.save(category).subscribe(() => {
-  //     alert('Thành công');
-  //   }, error => {
-  //     alert('Lỗi');
-  //   }) ;
-  // }
+  addCategory() {
+    this.obj = {
+      name: this.formcategory.value.name
+    };
+    this.categoryService.save(this.obj).subscribe((data) => {
+      alert('them thanh cong');
+      this.obj = data;
+      this.router.navigate(['']);
+    },
+    );
+  }
 }
