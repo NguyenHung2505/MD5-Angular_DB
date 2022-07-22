@@ -26,15 +26,6 @@ const routes: Routes = [
         path: 'delete/:id',
         component: ProductDeleteComponent
       },
-      {
-        path: 'categorylist',
-        component: CategoryCreateComponent
-      },
-      {
-        path: 'createCategory',
-        component: CategoryCreateComponent
-      }
-
     ]
   }
 

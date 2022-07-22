@@ -8,12 +8,8 @@
                   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto"></ul>
-
-
-
           </div>
         </nav>
       </div>
@@ -68,8 +64,8 @@
               <td>{{pro.name}}</td>
               <td>{{pro.price}}</td>
               <td>{{pro.category.name}}</td>
-              <td><a [routerLink]="['edit',pro.id]">Edit</a></td>
-              <td><a [routerLink]="['delete',pro.id]">Delete</a></td>
+              <button class="btn btn-warning" style="border-radius: 10px " [routerLink]="['edit',pro.id]"> Edit</button>
+              <button class="btn btn-danger" style="border-radius: 10px " [routerLink]="['delete',pro.id]"> Delete</button>
             </tr>
           </table>
         </div>
