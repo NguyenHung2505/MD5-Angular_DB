@@ -34,4 +34,7 @@ export class ProductService {
   searchname(name: any): Observable<Product> {
     return this.httpClient.get<Product>(this.API + `/searchname?name=${name}`);
   }
+  getByPriceBetween(from: any, to: any): Observable<Product> {
+    return this.httpClient.get<Product>(this.API + `/by-price-between?from=${from}&&to=${to}`);
+  }
 }

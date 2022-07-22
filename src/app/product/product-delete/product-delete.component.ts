@@ -3,6 +3,7 @@ import {ProductService} from '../../service/product.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {CategoryService} from '../../service/category.service';
 import {FormControl, FormGroup} from '@angular/forms';
+import {resetFakeAsyncZone} from '@angular/core/testing';
 
 @Component({
   selector: 'app-product-delete',

@@ -13,7 +13,16 @@ import {error} from 'protractor';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  // tim kiem theo ten
   name: any;
+  // tim kiem theo gia
+  productForm: FormGroup = new FormGroup({
+    name: new FormControl(''),
+    categoryId: new FormControl(''),
+    from: new FormControl(''),
+    to: new FormControl('')
+  });
+  //
   form: FormGroup = new FormGroup({
     category: new FormControl('')
   });
@@ -42,14 +51,18 @@ export class ProductListComponent implements OnInit {
       console.log(error);
     });
   }
-  // getByProductById(id: any) {
-  //   this.productService.getByProductById(id).subscribe((data) => {
-  //     this.listProduct = data;
-  //   }, error => {
-  //     console.log(error);
-  //   });
-  // }
-  getByProductById() {
+  // tim kiem product bang category
+  getByProductById(id: any) {
+    this.productService.getByProductById(id).subscribe((data) => {
+      this.listProduct = data;
+      // tslint:disable-next-line:no-shadowed-variable
+    }, error => {
+      console.log(error);
+    });
+  }
+  //
+  // selection
+  getByIdProductById() {
     const id = this.form.value.category;
     this.productService.getByProductById(id).subscribe((data) => {
       this.listProduct = data;
@@ -58,9 +71,17 @@ export class ProductListComponent implements OnInit {
       console.log(error);
     });
   }
-  getByname() {
-    // name = this.name.value.category;
+  getByname(name: any) {
     this.productService.searchname(this.name).subscribe((data) => {
+      this.listProduct = data;
+    });
+  }
+
+  searchByPrice() {
+    const from = this.productForm.value.from;
+    const to = this.productForm.value.to;
+    this.productService.getByPriceBetween(from, to).subscribe((data) => {
+      console.log(data);
       this.listProduct = data;
     });
   }
